@@ -6,3 +6,5 @@
 - API Gateway
 - Ocelot
 - Identity Server
+- Observer Design Pattern
+- RabbitMQ
