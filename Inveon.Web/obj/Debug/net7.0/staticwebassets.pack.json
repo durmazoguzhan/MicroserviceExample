@@ -5,12 +5,32 @@
       "PackagePath": "staticwebassets\\Inveon.Web.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\Oguzhan\\Desktop\\InveonBootcamp\\MicroserviceInveonExample\\Inveon.Web\\wwwroot\\Uploads\\panertikka.jpg",
+      "PackagePath": "staticwebassets\\Uploads\\panertikka.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Oguzhan\\Desktop\\InveonBootcamp\\MicroserviceInveonExample\\Inveon.Web\\wwwroot\\Uploads\\pavbhaji.jpg",
+      "PackagePath": "staticwebassets\\Uploads\\pavbhaji.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Oguzhan\\Desktop\\InveonBootcamp\\MicroserviceInveonExample\\Inveon.Web\\wwwroot\\Uploads\\samosa.jpg",
+      "PackagePath": "staticwebassets\\Uploads\\samosa.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Oguzhan\\Desktop\\InveonBootcamp\\MicroserviceInveonExample\\Inveon.Web\\wwwroot\\Uploads\\sweetpie.jpg",
+      "PackagePath": "staticwebassets\\Uploads\\sweetpie.jpg"
+    },
+    {
       "Id": "C:\\Users\\Oguzhan\\Desktop\\InveonBootcamp\\MicroserviceInveonExample\\Inveon.Web\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
       "Id": "C:\\Users\\Oguzhan\\Desktop\\InveonBootcamp\\MicroserviceInveonExample\\Inveon.Web\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\Oguzhan\\Desktop\\InveonBootcamp\\MicroserviceInveonExample\\Inveon.Web\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
     },
     {
       "Id": "C:\\Users\\Oguzhan\\Desktop\\InveonBootcamp\\MicroserviceInveonExample\\Inveon.Web\\wwwroot\\js\\site.js",

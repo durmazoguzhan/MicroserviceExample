@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "BfVxCigB4wvboDvf21q7mG+mL4utSPX+synlUkwykiE=",
+  "Hash": "o3lsKkc5uwicWiEbmYVC7I+Wop1iH4ipR440jpMuSUQ=",
   "Source": "Inveon.Services.Identity",
   "BasePath": "_content/Inveon.Services.Identity",
   "Mode": "Default",
@@ -1103,6 +1103,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\Oguzhan\\Desktop\\InveonBootcamp\\MicroserviceInveonExample\\Inveon.Services.Identity\\wwwroot\\favicon.png",
+      "SourceId": "Inveon.Services.Identity",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Oguzhan\\Desktop\\InveonBootcamp\\MicroserviceInveonExample\\Inveon.Services.Identity\\wwwroot\\",
+      "BasePath": "_content/Inveon.Services.Identity",
+      "RelativePath": "favicon.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\favicon.png"
     },
     {
       "Identity": "C:\\Users\\Oguzhan\\Desktop\\InveonBootcamp\\MicroserviceInveonExample\\Inveon.Services.Identity\\wwwroot\\js\\site.js",

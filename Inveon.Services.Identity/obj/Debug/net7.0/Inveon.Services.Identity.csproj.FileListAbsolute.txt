@@ -1,5 +1,6 @@
 C:\Users\Oguzhan\Desktop\InveonBootcamp\MicroserviceInveonExample\Inveon.Services.Identity\bin\Debug\net7.0\appsettings.Development.json
 C:\Users\Oguzhan\Desktop\InveonBootcamp\MicroserviceInveonExample\Inveon.Services.Identity\bin\Debug\net7.0\appsettings.json
+C:\Users\Oguzhan\Desktop\InveonBootcamp\MicroserviceInveonExample\Inveon.Services.Identity\bin\Debug\net7.0\keys\is-signing-key-4EA1812E4D8DC77F5DA2567D7F5DAE1D.json
 C:\Users\Oguzhan\Desktop\InveonBootcamp\MicroserviceInveonExample\Inveon.Services.Identity\bin\Debug\net7.0\Inveon.Services.Identity.staticwebassets.runtime.json
 C:\Users\Oguzhan\Desktop\InveonBootcamp\MicroserviceInveonExample\Inveon.Services.Identity\bin\Debug\net7.0\Inveon.Services.Identity.exe
 C:\Users\Oguzhan\Desktop\InveonBootcamp\MicroserviceInveonExample\Inveon.Services.Identity\bin\Debug\net7.0\Inveon.Services.Identity.deps.json
@@ -409,4 +410,3 @@ C:\Users\Oguzhan\Desktop\InveonBootcamp\MicroserviceInveonExample\Inveon.Service
 C:\Users\Oguzhan\Desktop\InveonBootcamp\MicroserviceInveonExample\Inveon.Services.Identity\obj\Debug\net7.0\Inveon.Services.Identity.pdb
 C:\Users\Oguzhan\Desktop\InveonBootcamp\MicroserviceInveonExample\Inveon.Services.Identity\obj\Debug\net7.0\Inveon.Services.Identity.genruntimeconfig.cache
 C:\Users\Oguzhan\Desktop\InveonBootcamp\MicroserviceInveonExample\Inveon.Services.Identity\obj\Debug\net7.0\ref\Inveon.Services.Identity.dll
-C:\Users\Oguzhan\Desktop\InveonBootcamp\MicroserviceInveonExample\Inveon.Services.Identity\bin\Debug\net7.0\keys\is-signing-key-4EA1812E4D8DC77F5DA2567D7F5DAE1D.json
