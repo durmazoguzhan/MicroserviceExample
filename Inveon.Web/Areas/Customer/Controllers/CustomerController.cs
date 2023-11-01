@@ -1,7 +1,9 @@
-﻿using Inveon.Web.Models;
+﻿using Inveon.Web.Hubs;
+using Inveon.Web.Models;
 using Inveon.Web.Services.IServices;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.SignalR;
 using Newtonsoft.Json;
 using System.Diagnostics;
 
@@ -12,11 +14,13 @@ namespace Inveon.Web.Areas.Customer.Controllers
     {
         private readonly ILogger<CustomerController> _logger;
         private readonly IProductService _productService;
+        private readonly IHubContext<MessageHub> _messageHub;
 
-        public CustomerController(ILogger<CustomerController> logger, IProductService productService)
+        public CustomerController(ILogger<CustomerController> logger, IProductService productService, IHubContext<MessageHub> messageHub)
         {
             _logger = logger;
             _productService = productService;
+            _messageHub = messageHub;
         }
 
         public async Task<IActionResult> Index()
@@ -57,6 +61,21 @@ namespace Inveon.Web.Areas.Customer.Controllers
         public IActionResult Logout()
         {
             return SignOut("Cookies", "oidc");
+        }
+
+        [Route("Message")]
+        [HttpPost]
+        public IActionResult Message([FromBody] Message message)
+        {
+            _messageHub.Clients.All.SendAsync("lastMessage", message);
+            return Accepted();
+        }
+
+        [Route("Partial")]
+        [HttpPost]
+        public ActionResult DisplayNewMessageBox([FromBody] Message message)
+        {
+            return PartialView("_MessageBoxPartial", message);
         }
     }
 }

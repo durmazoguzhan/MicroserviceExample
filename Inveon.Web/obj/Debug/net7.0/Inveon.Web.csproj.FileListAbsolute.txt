@@ -1,5 +1,6 @@
 C:\Users\Oguzhan\Desktop\InveonBootcamp\MicroserviceInveonExample\Inveon.Web\bin\Debug\net7.0\appsettings.Development.json
 C:\Users\Oguzhan\Desktop\InveonBootcamp\MicroserviceInveonExample\Inveon.Web\bin\Debug\net7.0\appsettings.json
+C:\Users\Oguzhan\Desktop\InveonBootcamp\MicroserviceInveonExample\Inveon.Web\bin\Debug\net7.0\libman.json
 C:\Users\Oguzhan\Desktop\InveonBootcamp\MicroserviceInveonExample\Inveon.Web\bin\Debug\net7.0\Inveon.Web.staticwebassets.runtime.json
 C:\Users\Oguzhan\Desktop\InveonBootcamp\MicroserviceInveonExample\Inveon.Web\bin\Debug\net7.0\Inveon.Web.exe
 C:\Users\Oguzhan\Desktop\InveonBootcamp\MicroserviceInveonExample\Inveon.Web\bin\Debug\net7.0\Inveon.Web.deps.json
@@ -329,6 +330,7 @@ C:\Users\Oguzhan\Desktop\InveonBootcamp\MicroserviceInveonExample\Inveon.Web\bin
 C:\Users\Oguzhan\Desktop\InveonBootcamp\MicroserviceInveonExample\Inveon.Web\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Users\Oguzhan\Desktop\InveonBootcamp\MicroserviceInveonExample\Inveon.Web\bin\Debug\net7.0\Microsoft.IdentityModel.Tokens.dll
 C:\Users\Oguzhan\Desktop\InveonBootcamp\MicroserviceInveonExample\Inveon.Web\bin\Debug\net7.0\Microsoft.NET.StringTools.dll
+C:\Users\Oguzhan\Desktop\InveonBootcamp\MicroserviceInveonExample\Inveon.Web\bin\Debug\net7.0\Microsoft.OpenApi.dll
 C:\Users\Oguzhan\Desktop\InveonBootcamp\MicroserviceInveonExample\Inveon.Web\bin\Debug\net7.0\Microsoft.VisualStudio.Web.CodeGeneration.dll
 C:\Users\Oguzhan\Desktop\InveonBootcamp\MicroserviceInveonExample\Inveon.Web\bin\Debug\net7.0\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
 C:\Users\Oguzhan\Desktop\InveonBootcamp\MicroserviceInveonExample\Inveon.Web\bin\Debug\net7.0\dotnet-aspnet-codegenerator-design.dll
@@ -347,6 +349,9 @@ C:\Users\Oguzhan\Desktop\InveonBootcamp\MicroserviceInveonExample\Inveon.Web\bin
 C:\Users\Oguzhan\Desktop\InveonBootcamp\MicroserviceInveonExample\Inveon.Web\bin\Debug\net7.0\NuGet.ProjectModel.dll
 C:\Users\Oguzhan\Desktop\InveonBootcamp\MicroserviceInveonExample\Inveon.Web\bin\Debug\net7.0\NuGet.Protocol.dll
 C:\Users\Oguzhan\Desktop\InveonBootcamp\MicroserviceInveonExample\Inveon.Web\bin\Debug\net7.0\NuGet.Versioning.dll
+C:\Users\Oguzhan\Desktop\InveonBootcamp\MicroserviceInveonExample\Inveon.Web\bin\Debug\net7.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Oguzhan\Desktop\InveonBootcamp\MicroserviceInveonExample\Inveon.Web\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Oguzhan\Desktop\InveonBootcamp\MicroserviceInveonExample\Inveon.Web\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\Oguzhan\Desktop\InveonBootcamp\MicroserviceInveonExample\Inveon.Web\bin\Debug\net7.0\System.Composition.AttributedModel.dll
 C:\Users\Oguzhan\Desktop\InveonBootcamp\MicroserviceInveonExample\Inveon.Web\bin\Debug\net7.0\System.Composition.Convention.dll
 C:\Users\Oguzhan\Desktop\InveonBootcamp\MicroserviceInveonExample\Inveon.Web\bin\Debug\net7.0\System.Composition.Hosting.dll

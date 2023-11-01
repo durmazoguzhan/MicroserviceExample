@@ -1,0 +1,98 @@
+﻿@if (User.Identity.IsAuthenticated)
+{
+
+    <div class="bottom-0 position-fixed" style="min-width: 25%; right: 5%;">
+        <!-- Header -->
+        <div class="rounded-top bg-primary d-flex align-items-center justify-content-between p-2">
+            <div class="d-flex align-items-center gap-2 text-white">
+                <i class="fa fa-comments"></i>
+                <div>Canlı Sohbet</div>
+            </div>
+            <div class="d-flex align-items-center text-white">
+                <i id="showButton" class="fa fa-chevron-up" role="button" onclick="ShowMessageArea()"></i>
+                <i id="hideButton" class="fa fa-chevron-down d-none" role="button" onclick="HideMessageArea()"></i>
+            </div>
+        </div>
+        <!-- Message Area -->
+        <div class="d-none" id="messageArea">
+            <!-- Body -->
+            <div id="lastMessages" class="bg-primary p-3 border-top">
+            </div>
+            <!-- Footer -->
+            <div class="pt-2 p-1 bg-primary text-white input-group">
+                <input id="message" type="text" class="form-control" placeholder="Mesajınız...">
+                <div class="input-group-append">
+                    <button onclick="CreateMessage()" class="btn btn-outline-light"><i class="fa fa-paper-plane"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="~/js/signalr/signalr.js" type="text/javascript"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+        function ShowMessageArea() {
+            document.getElementById("messageArea").classList.remove("d-none");
+            document.getElementById("hideButton").classList.remove("d-none");
+            document.getElementById("showButton").classList.add("d-none");
+        }
+        function HideMessageArea() {
+            document.getElementById("messageArea").classList.add("d-none");
+            document.getElementById("hideButton").classList.add("d-none");
+            document.getElementById("showButton").classList.remove("d-none");
+        }
+        function CreateMessage() {
+            let username = '@User.Identity.Name';
+            let content = document.getElementById("message").value;
+            let time = '@DateTime.Now.ToShortTimeString()';
+
+            fetch("/Message", {
+                method: "POST",
+                body: JSON.stringify({
+                    username, content, time
+                }),
+                headers: {
+                    'content-type': 'application/json'
+                }
+            }).then(response => console.log("message created" + JSON.stringify({
+                username, content, time
+            })));
+
+            document.getElementById("message").value = "";
+        }
+
+        $(document).ready(function () {
+            var connection = new signalR.HubConnectionBuilder().withUrl("/messagehub").build();
+
+            connection.on("lastMessage", function (message) {
+                var messageDiv = $("#lastMessages");
+
+                $.ajax({
+                    url: "/Partial",
+                    method: "POST",
+                    contentType: "application/json",
+                    data: JSON.stringify(message),
+                    success: function (response) {
+                        console.log("partial is taken");
+                        console.log(message);
+                        messageDiv.append(response);
+                    },
+                    error: function (err) {
+                        console.error(err.toString());
+                    }
+                });
+            });
+
+            connection.start().then(function () {
+                console.log("connected");
+            }).catch(function (err) {
+                console.error(err.toString());
+            });
+        });
+
+
+
+    </script>
+}

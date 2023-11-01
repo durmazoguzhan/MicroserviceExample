@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Inveon.Web.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <header>
@@ -28,7 +29,7 @@
                         </li>
                         <li class="nav-item pt-lg-1">
                             <a class="nav-link" asp-controller="Cart" asp-action="CartIndex">
-                                <i class="fas fa-shopping-cart"></i>
+                                <i class="fa fa-shopping-cart"></i>
                             </a>
                         </li>
                     </ul>
@@ -43,11 +44,14 @@
         </main>
     </div>
 
+    <partial name="_LiveChatPartial" />
+
     <footer class="border-top footer text-muted">
         <div class="container">
             &copy; 2023 - Inveon.Web - <a asp-area="Customer" asp-controller="Customer" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

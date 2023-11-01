@@ -1,0 +1,37 @@
+﻿@model Inveon.Web.Models.Message
+
+@if (Model != null)
+{
+    @if (Model.Username == User.Identity.Name)
+    {
+        <div class="mb-2 rounded w-100 bg-light p-2 d-flex flex-column align-items-end">
+            <div class="d-flex justify-content-between flex-row-reverse">
+                <div class="text-uppercase text-primary fw-bold">
+                    @Model.Username
+                </div>
+                <div class="text-secondary">
+                    @Model.Time
+                </div>
+            </div>
+            <div>
+                @Model.Content
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="mb-2 rounded w-100 bg-light p-2 d-flex flex-column align-items-start">
+            <div class="d-flex justify-content-between">
+                <div class="text-uppercase text-primary fw-bold">
+                    @Model.Username
+                </div>
+                <div class="text-secondary">
+                    @Model.Time
+                </div>
+            </div>
+            <div>
+                @Model.Content
+            </div>
+        </div>
+    }
+}
