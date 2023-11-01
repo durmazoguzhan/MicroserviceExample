@@ -5,7 +5,7 @@
     @if (Model.Username == User.Identity.Name)
     {
         <div class="mb-2 rounded w-100 bg-light p-2 d-flex flex-column align-items-end">
-            <div class="d-flex justify-content-between flex-row-reverse">
+            <div class="d-flex justify-content-between gap-2 flex-row-reverse">
                 <div class="text-uppercase text-primary fw-bold">
                     @Model.Username
                 </div>
@@ -21,7 +21,7 @@
     else
     {
         <div class="mb-2 rounded w-100 bg-light p-2 d-flex flex-column align-items-start">
-            <div class="d-flex justify-content-between">
+            <div class="d-flex justify-content-between gap-2 ">
                 <div class="text-uppercase text-primary fw-bold">
                     @Model.Username
                 </div>
