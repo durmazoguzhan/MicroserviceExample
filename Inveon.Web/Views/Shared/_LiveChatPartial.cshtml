@@ -16,7 +16,7 @@
         <!-- Message Area -->
         <div class="d-none" id="messageArea">
             <!-- Body -->
-            <div id="lastMessages" class="bg-primary p-3 border-top">
+            <div id="lastMessages" class="bg-primary p-3 border-top overflow-auto" style="max-height: 40vh;">
             </div>
             <!-- Footer -->
             <div class="pt-2 p-1 bg-primary text-white input-group">
@@ -29,7 +29,6 @@
     </div>
 
     //TODO: fix wrong time stamp
-    //TODO: add message scroll
 
     <script src="~/js/signalr/signalr.js" type="text/javascript"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -83,12 +82,19 @@
                 username, content, time
             })));
 
+            
+
             ClearElements();
         }
 
         function ClearElements() {
             document.getElementById("message").value = "";
             document.getElementById("send").disabled = true;
+        }
+
+        function ScrollToBottomMessages() {
+            var lastMessages = document.getElementById("lastMessages");
+            lastMessages.scrollTop = lastMessages.scrollHeight;
         }
 
         $(document).ready(function () {
@@ -106,6 +112,7 @@
                         console.log("partial is taken");
                         console.log(message);
                         messageDiv.append(response);
+                        ScrollToBottomMessages();
                     },
                     error: function (err) {
                         console.error(err.toString());
