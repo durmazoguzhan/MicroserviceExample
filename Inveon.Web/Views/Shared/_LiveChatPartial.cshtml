@@ -22,7 +22,7 @@
             <div class="pt-2 p-1 bg-primary text-white input-group">
                 <input id="message" type="text" class="form-control" placeholder="Mesajınız...">
                 <div class="input-group-append">
-                    <button onclick="CreateMessage()" class="btn btn-outline-light"><i class="fa fa-paper-plane"></i></button>
+                    <button id="send" onclick="CreateMessage()" class="btn btn-outline-light"><i class="fa fa-paper-plane"></i></button>
                 </div>
             </div>
         </div>
@@ -33,20 +33,40 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <script>
+        var messageInput = document.getElementById("message");
+        var sendButton = document.getElementById("send");
+        messageInput.addEventListener("input", MessageNullControl);
+        MessageNullControl();
+
+        function MessageNullControl() {
+            var inputValue = messageInput.value;
+            if (inputValue === "") {
+                sendButton.disabled = true;
+            } else {
+                sendButton.disabled = false;
+            }
+        }
+
         function ShowMessageArea() {
             document.getElementById("messageArea").classList.remove("d-none");
             document.getElementById("hideButton").classList.remove("d-none");
             document.getElementById("showButton").classList.add("d-none");
         }
+
         function HideMessageArea() {
             document.getElementById("messageArea").classList.add("d-none");
             document.getElementById("hideButton").classList.add("d-none");
             document.getElementById("showButton").classList.remove("d-none");
         }
+
         function CreateMessage() {
-            let username = '@User.Identity.Name';
-            let content = document.getElementById("message").value;
-            let time = '@DateTime.Now.ToShortTimeString()';
+            var username = '@User.Identity.Name';
+            var content = document.getElementById("message").value;
+            //TODO: fix wrong time stamp
+            //TODO: add message scroll
+            //TODO: send message with enter key
+            //TODO: check null for the message
+            var time = '@DateTime.Now.ToShortTimeString()';
 
             fetch("/Message", {
                 method: "POST",
@@ -91,8 +111,6 @@
                 console.error(err.toString());
             });
         });
-
-
 
     </script>
 }
