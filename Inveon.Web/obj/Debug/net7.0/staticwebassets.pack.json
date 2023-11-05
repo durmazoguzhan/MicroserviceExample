@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\Inveon.Web.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\Oguzhan\\Desktop\\InveonBootcamp\\MicroserviceInveonExample\\Inveon.Web\\wwwroot\\Uploads\\baklava.jpg",
+      "PackagePath": "staticwebassets\\Uploads\\baklava.jpg"
+    },
+    {
       "Id": "C:\\Users\\Oguzhan\\Desktop\\InveonBootcamp\\MicroserviceInveonExample\\Inveon.Web\\wwwroot\\Uploads\\panertikka.jpg",
       "PackagePath": "staticwebassets\\Uploads\\panertikka.jpg"
     },
@@ -31,6 +35,10 @@
     {
       "Id": "C:\\Users\\Oguzhan\\Desktop\\InveonBootcamp\\MicroserviceInveonExample\\Inveon.Web\\wwwroot\\favicon.png",
       "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "C:\\Users\\Oguzhan\\Desktop\\InveonBootcamp\\MicroserviceInveonExample\\Inveon.Web\\wwwroot\\images\\order.jpg",
+      "PackagePath": "staticwebassets\\images\\order.jpg"
     },
     {
       "Id": "C:\\Users\\Oguzhan\\Desktop\\InveonBootcamp\\MicroserviceInveonExample\\Inveon.Web\\wwwroot\\js\\signalr\\README.md",
@@ -671,6 +679,10 @@
     {
       "Id": "C:\\Users\\Oguzhan\\Desktop\\InveonBootcamp\\MicroserviceInveonExample\\Inveon.Web\\wwwroot\\js\\signalr\\dist\\webworker\\signalr.min.js.map",
       "PackagePath": "staticwebassets\\js\\signalr\\dist\\webworker\\signalr.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Oguzhan\\Desktop\\InveonBootcamp\\MicroserviceInveonExample\\Inveon.Web\\wwwroot\\js\\signalr\\package-lock.json",
+      "PackagePath": "staticwebassets\\js\\signalr\\package-lock.json"
     },
     {
       "Id": "C:\\Users\\Oguzhan\\Desktop\\InveonBootcamp\\MicroserviceInveonExample\\Inveon.Web\\wwwroot\\js\\signalr\\package.json",

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "j6fZCJch1veDh4GT/Z3b0jEOrzfi1/SXpULq3cd+w4A=",
+  "Hash": "R8JMdwQsDeN2qC6VF6h+0K5/c/x+7IJV7oej3zqQvtU=",
   "Source": "Inveon.Web",
   "BasePath": "_content/Inveon.Web",
   "Mode": "Default",
@@ -100,6 +100,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.png"
+    },
+    {
+      "Identity": "C:\\Users\\Oguzhan\\Desktop\\InveonBootcamp\\MicroserviceInveonExample\\Inveon.Web\\wwwroot\\images\\order.jpg",
+      "SourceId": "Inveon.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Oguzhan\\Desktop\\InveonBootcamp\\MicroserviceInveonExample\\Inveon.Web\\wwwroot\\",
+      "BasePath": "_content/Inveon.Web",
+      "RelativePath": "images/order.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\order.jpg"
     },
     {
       "Identity": "C:\\Users\\Oguzhan\\Desktop\\InveonBootcamp\\MicroserviceInveonExample\\Inveon.Web\\wwwroot\\js\\signalr\\dist\\cjs\\AbortController.js",
@@ -2822,6 +2839,23 @@
       "OriginalItemSpec": "wwwroot\\js\\signalr\\package.json"
     },
     {
+      "Identity": "C:\\Users\\Oguzhan\\Desktop\\InveonBootcamp\\MicroserviceInveonExample\\Inveon.Web\\wwwroot\\js\\signalr\\package-lock.json",
+      "SourceId": "Inveon.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Oguzhan\\Desktop\\InveonBootcamp\\MicroserviceInveonExample\\Inveon.Web\\wwwroot\\",
+      "BasePath": "_content/Inveon.Web",
+      "RelativePath": "js/signalr/package-lock.json",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\signalr\\package-lock.json"
+    },
+    {
       "Identity": "C:\\Users\\Oguzhan\\Desktop\\InveonBootcamp\\MicroserviceInveonExample\\Inveon.Web\\wwwroot\\js\\signalr\\README.md",
       "SourceId": "Inveon.Web",
       "SourceType": "Discovered",
@@ -4435,6 +4469,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Identity": "C:\\Users\\Oguzhan\\Desktop\\InveonBootcamp\\MicroserviceInveonExample\\Inveon.Web\\wwwroot\\Uploads\\baklava.jpg",
+      "SourceId": "Inveon.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Oguzhan\\Desktop\\InveonBootcamp\\MicroserviceInveonExample\\Inveon.Web\\wwwroot\\",
+      "BasePath": "_content/Inveon.Web",
+      "RelativePath": "Uploads/baklava.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Uploads\\baklava.jpg"
     },
     {
       "Identity": "C:\\Users\\Oguzhan\\Desktop\\InveonBootcamp\\MicroserviceInveonExample\\Inveon.Web\\wwwroot\\Uploads\\panertikka.jpg",
