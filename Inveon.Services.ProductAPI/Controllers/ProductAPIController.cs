@@ -6,7 +6,6 @@ using Microsoft.AspNetCore.Mvc;
 namespace Inveon.Services.ProductAPI.Controllers
 {
     [Route("api/products")]
-    [ApiController]
     public class ProductAPIController : ControllerBase
     {
         protected ResponseDto _response;
@@ -15,8 +14,9 @@ namespace Inveon.Services.ProductAPI.Controllers
         public ProductAPIController(IProductRepository productRepository)
         {
             _productRepository = productRepository;
-            this._response = new ResponseDto();
+            _response = new ResponseDto();
         }
+
         [HttpGet]
         public async Task<object> Get()
         {
@@ -52,9 +52,8 @@ namespace Inveon.Services.ProductAPI.Controllers
             return _response;
         }
 
-
         [HttpPost]
-        [Authorize]
+        //[Authorize]
         public async Task<object> Post([FromBody] ProductDto productDto)
         {
             try
@@ -71,9 +70,8 @@ namespace Inveon.Services.ProductAPI.Controllers
             return _response;
         }
 
-
         [HttpPut]
-        [Authorize]
+        //[Authorize]
         public async Task<object> Put([FromBody] ProductDto productDto)
         {
             try
@@ -91,7 +89,7 @@ namespace Inveon.Services.ProductAPI.Controllers
         }
 
         [HttpDelete]
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         [Route("{id}")]
         public async Task<object> Delete(int id)
         {

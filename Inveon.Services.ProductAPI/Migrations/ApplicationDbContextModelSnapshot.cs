@@ -33,6 +33,9 @@ namespace Inveon.Services.ProductAPI.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("Count")
+                        .HasColumnType("int");
+
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -57,6 +60,7 @@ namespace Inveon.Services.ProductAPI.Migrations
                         {
                             ProductId = 1,
                             CategoryName = "Appetizer",
+                            Count = 0,
                             Description = "Praesent scelerisque, mi sed ultrices condimentum, lacus ipsum viverra massa, in lobortis sapien eros in arcu. Quisque vel lacus ac magna vehicula sagittis ut non lacus.<br/>Sed volutpat tellus lorem, lacinia tincidunt tellus varius nec. Vestibulum arcu turpis, facilisis sed ligula ac, maximus malesuada neque. Phasellus commodo cursus pretium.",
                             ImageUrl = "samosa.jpg",
                             Name = "Samosa",
@@ -66,6 +70,7 @@ namespace Inveon.Services.ProductAPI.Migrations
                         {
                             ProductId = 2,
                             CategoryName = "Appetizer",
+                            Count = 0,
                             Description = "Praesent scelerisque, mi sed ultrices condimentum, lacus ipsum viverra massa, in lobortis sapien eros in arcu. Quisque vel lacus ac magna vehicula sagittis ut non lacus.<br/>Sed volutpat tellus lorem, lacinia tincidunt tellus varius nec. Vestibulum arcu turpis, facilisis sed ligula ac, maximus malesuada neque. Phasellus commodo cursus pretium.",
                             ImageUrl = "panertikka.jpg",
                             Name = "Paneer Tikka",
@@ -75,6 +80,7 @@ namespace Inveon.Services.ProductAPI.Migrations
                         {
                             ProductId = 3,
                             CategoryName = "Dessert",
+                            Count = 0,
                             Description = "Praesent scelerisque, mi sed ultrices condimentum, lacus ipsum viverra massa, in lobortis sapien eros in arcu. Quisque vel lacus ac magna vehicula sagittis ut non lacus.<br/>Sed volutpat tellus lorem, lacinia tincidunt tellus varius nec. Vestibulum arcu turpis, facilisis sed ligula ac, maximus malesuada neque. Phasellus commodo cursus pretium.",
                             ImageUrl = "sweetpie.jpg",
                             Name = "Sweet Pie",
@@ -84,6 +90,7 @@ namespace Inveon.Services.ProductAPI.Migrations
                         {
                             ProductId = 4,
                             CategoryName = "Entree",
+                            Count = 0,
                             Description = "Praesent scelerisque, mi sed ultrices condimentum, lacus ipsum viverra massa, in lobortis sapien eros in arcu. Quisque vel lacus ac magna vehicula sagittis ut non lacus.<br/>Sed volutpat tellus lorem, lacinia tincidunt tellus varius nec. Vestibulum arcu turpis, facilisis sed ligula ac, maximus malesuada neque. Phasellus commodo cursus pretium.",
                             ImageUrl = "pavbhaji.jpg",
                             Name = "Pav Bhaji",

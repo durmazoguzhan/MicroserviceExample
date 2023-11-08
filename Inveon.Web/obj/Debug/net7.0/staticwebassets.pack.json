@@ -5,10 +5,6 @@
       "PackagePath": "staticwebassets\\Inveon.Web.bundle.scp.css"
     },
     {
-      "Id": "C:\\Users\\Oguzhan\\Desktop\\InveonBootcamp\\MicroserviceInveonExample\\Inveon.Web\\wwwroot\\Uploads\\baklava.jpg",
-      "PackagePath": "staticwebassets\\Uploads\\baklava.jpg"
-    },
-    {
       "Id": "C:\\Users\\Oguzhan\\Desktop\\InveonBootcamp\\MicroserviceInveonExample\\Inveon.Web\\wwwroot\\Uploads\\panertikka.jpg",
       "PackagePath": "staticwebassets\\Uploads\\panertikka.jpg"
     },

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Q900hzMtYxCPr3lloPw6q0gUn+a4g0VDtMCnNlz7le4ma1m5+KJUbpjU3rTsoYp8hDQTrDGi4064DXScaQbBWw==",
+  "dgSpecHash": "c7awedxlI/DBIbHbHikaHVs5SRGllegXdfeI/Cr8McDQ4s1JtKtxZS/mLyoCuzUPWfqRHSh+bMnGjF35qRt8yA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Oguzhan\\Desktop\\InveonBootcamp\\MicroserviceInveonExample\\Inveon.Services.ShoppingCartAPI\\Inveon.Services.ShoppingCartAPI.csproj",
   "expectedPackageFiles": [
@@ -10,7 +10,7 @@
     "C:\\Users\\Oguzhan\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
     "C:\\Users\\Oguzhan\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Oguzhan\\.nuget\\packages\\iyzipay\\2.1.54\\iyzipay.2.1.54.nupkg.sha512",
-    "C:\\Users\\Oguzhan\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\7.0.0\\microsoft.aspnetcore.authentication.jwtbearer.7.0.0.nupkg.sha512",
+    "C:\\Users\\Oguzhan\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\7.0.13\\microsoft.aspnetcore.authentication.jwtbearer.7.0.13.nupkg.sha512",
     "C:\\Users\\Oguzhan\\.nuget\\packages\\microsoft.aspnetcore.openapi\\7.0.4\\microsoft.aspnetcore.openapi.7.0.4.nupkg.sha512",
     "C:\\Users\\Oguzhan\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\Oguzhan\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

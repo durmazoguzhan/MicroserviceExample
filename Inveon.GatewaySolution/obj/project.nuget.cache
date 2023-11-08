@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "EzfazQJbk+N0cHSQquq75ADnvzQXJWgWQ3wOvaSmcTw+u81hxTLJiZ3CBnuR00pIBo74DuV3cvQX4g/+WJAozA==",
+  "dgSpecHash": "yxv3viobnBhVFIWIdIkwtgmMw6dvJqjVQPmNqBDJAXLmZcp7+E/jNj9BreDTidaqfwsrf0Eo1npDomVFJd5fXw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Oguzhan\\Desktop\\InveonBootcamp\\MicroserviceInveonExample\\Inveon.GatewaySolution\\Inveon.GatewaySolution.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Oguzhan\\.nuget\\packages\\fluentvalidation\\9.3.0\\fluentvalidation.9.3.0.nupkg.sha512",
     "C:\\Users\\Oguzhan\\.nuget\\packages\\identitymodel\\5.1.0\\identitymodel.5.1.0.nupkg.sha512",
-    "C:\\Users\\Oguzhan\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\7.0.0\\microsoft.aspnetcore.authentication.jwtbearer.7.0.0.nupkg.sha512",
+    "C:\\Users\\Oguzhan\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\7.0.13\\microsoft.aspnetcore.authentication.jwtbearer.7.0.13.nupkg.sha512",
     "C:\\Users\\Oguzhan\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\5.0.0\\microsoft.aspnetcore.jsonpatch.5.0.0.nupkg.sha512",
     "C:\\Users\\Oguzhan\\.nuget\\packages\\microsoft.aspnetcore.middlewareanalysis\\5.0.0\\microsoft.aspnetcore.middlewareanalysis.5.0.0.nupkg.sha512",
     "C:\\Users\\Oguzhan\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\5.0.0\\microsoft.aspnetcore.mvc.newtonsoftjson.5.0.0.nupkg.sha512",

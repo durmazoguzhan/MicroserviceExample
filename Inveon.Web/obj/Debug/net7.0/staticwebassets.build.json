@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "R8JMdwQsDeN2qC6VF6h+0K5/c/x+7IJV7oej3zqQvtU=",
+  "Hash": "p3nsZenNcPrKJ8zojvoUy6ZwmHSgIj9YjdXtpjvwXwI=",
   "Source": "Inveon.Web",
   "BasePath": "_content/Inveon.Web",
   "Mode": "Default",
@@ -4469,23 +4469,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
-    },
-    {
-      "Identity": "C:\\Users\\Oguzhan\\Desktop\\InveonBootcamp\\MicroserviceInveonExample\\Inveon.Web\\wwwroot\\Uploads\\baklava.jpg",
-      "SourceId": "Inveon.Web",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Oguzhan\\Desktop\\InveonBootcamp\\MicroserviceInveonExample\\Inveon.Web\\wwwroot\\",
-      "BasePath": "_content/Inveon.Web",
-      "RelativePath": "Uploads/baklava.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Uploads\\baklava.jpg"
     },
     {
       "Identity": "C:\\Users\\Oguzhan\\Desktop\\InveonBootcamp\\MicroserviceInveonExample\\Inveon.Web\\wwwroot\\Uploads\\panertikka.jpg",

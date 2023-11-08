@@ -32,7 +32,7 @@ namespace Inveon.Web.Areas.Admin.Controllers
             return View(list);
         }
 
-        public async Task<IActionResult> ProductCreate()
+        public IActionResult ProductCreate()
         {
             return View();
         }
@@ -41,8 +41,6 @@ namespace Inveon.Web.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> ProductCreate(ProductViewModel model)
         {
-            //if (ModelState.IsValid)
-            //  {
             string yuklenenResimAdi = ResimYukle(model);
             var accessToken = await HttpContext.GetTokenAsync("access_token");
 
@@ -62,7 +60,6 @@ namespace Inveon.Web.Areas.Admin.Controllers
             {
                 return RedirectToAction(nameof(ProductIndex));
             }
-            //}
             return View(model);
         }
 

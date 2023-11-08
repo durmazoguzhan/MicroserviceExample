@@ -1,6 +1,7 @@
 ﻿using Inveon.Web.Models;
 using Inveon.Web.Services.IServices;
 using Newtonsoft.Json;
+using System.Diagnostics;
 using System.Net.Http.Headers;
 using System.Text;
 
@@ -13,7 +14,7 @@ namespace Inveon.Web.Services
 
         public BaseService(IHttpClientFactory httpClient)
         {
-            this.responseModel = new ResponseDto();
+            responseModel = new ResponseDto();
             this.httpClient = httpClient;
         }
 
@@ -22,14 +23,17 @@ namespace Inveon.Web.Services
             try
             {
                 var client = httpClient.CreateClient("InveonAPI");
-                HttpRequestMessage message = new HttpRequestMessage();
+                client.DefaultRequestHeaders.Clear();
+
+                var message = new HttpRequestMessage();
                 message.Headers.Add("Accept", "application/json");
                 message.RequestUri = new Uri(apiRequest.Url);
-                client.DefaultRequestHeaders.Clear();
+
                 if (apiRequest.Data != null)
                 {
                     message.Content = new StringContent(JsonConvert.SerializeObject(apiRequest.Data),
                         Encoding.UTF8, "application/json");
+                    Debug.WriteLine(await message.Content.ReadAsStringAsync());
                 }
 
                 if (!string.IsNullOrEmpty(apiRequest.AccessToken))
@@ -37,7 +41,6 @@ namespace Inveon.Web.Services
                     client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", apiRequest.AccessToken);
                 }
 
-                HttpResponseMessage apiResponse = null;
                 switch (apiRequest.ApiType)
                 {
                     case SD.ApiType.POST:
@@ -53,8 +56,8 @@ namespace Inveon.Web.Services
                         message.Method = HttpMethod.Get;
                         break;
                 }
-                apiResponse = await client.SendAsync(message);
-
+                HttpResponseMessage apiResponse = await client.SendAsync(message);
+                string test = await apiResponse.Content.ReadAsStringAsync();
                 var apiContent = await apiResponse.Content.ReadAsStringAsync();
                 var apiResponseDto = JsonConvert.DeserializeObject<T>(apiContent);
                 return apiResponseDto;

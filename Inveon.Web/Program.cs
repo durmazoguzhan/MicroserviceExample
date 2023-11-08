@@ -3,6 +3,8 @@ using Inveon.Web.Services;
 using Microsoft.AspNetCore.Authentication;
 using Inveon.Web;
 using Inveon.Web.Hubs;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.VisualBasic;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -38,7 +40,6 @@ builder.Services.AddAuthentication(options =>
         options.TokenValidationParameters.RoleClaimType = "role";
         options.Scope.Add("inveon");
         options.SaveTokens = true;
-
     });
 
 var app = builder.Build();

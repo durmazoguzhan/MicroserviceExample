@@ -29,16 +29,16 @@ builder.Services.AddSingleton<IRabbitMQCartMessageSender, RabbitMQCartMessageSen
 builder.Services.AddControllers();
 builder.Services.AddHttpClient<ICouponRepository, CouponRepository>(u => u.BaseAddress =
   new Uri(builder.Configuration["ServiceUrls:CouponAPI"]));
+
+
 builder.Services.AddAuthentication("Bearer")
     .AddJwtBearer("Bearer", options =>
     {
-
         options.Authority = "https://localhost:44365/";
         options.TokenValidationParameters = new TokenValidationParameters
         {
             ValidateAudience = false
         };
-
     });
 
 builder.Services.AddAuthorization(options =>
