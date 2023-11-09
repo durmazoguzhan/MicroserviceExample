@@ -1,0 +1,11 @@
+C:\Users\Oguzhan\Desktop\InveonBootcamp\MicroserviceInveonExample\Inveon.MailSender\bin\Debug\net7.0\Inveon.MailSender.deps.json
+C:\Users\Oguzhan\Desktop\InveonBootcamp\MicroserviceInveonExample\Inveon.MailSender\bin\Debug\net7.0\Inveon.MailSender.dll
+C:\Users\Oguzhan\Desktop\InveonBootcamp\MicroserviceInveonExample\Inveon.MailSender\bin\Debug\net7.0\Inveon.MailSender.pdb
+C:\Users\Oguzhan\Desktop\InveonBootcamp\MicroserviceInveonExample\Inveon.MailSender\obj\Debug\net7.0\Inveon.MailSender.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Oguzhan\Desktop\InveonBootcamp\MicroserviceInveonExample\Inveon.MailSender\obj\Debug\net7.0\Inveon.MailSender.AssemblyInfoInputs.cache
+C:\Users\Oguzhan\Desktop\InveonBootcamp\MicroserviceInveonExample\Inveon.MailSender\obj\Debug\net7.0\Inveon.MailSender.AssemblyInfo.cs
+C:\Users\Oguzhan\Desktop\InveonBootcamp\MicroserviceInveonExample\Inveon.MailSender\obj\Debug\net7.0\Inveon.MailSender.csproj.CoreCompileInputs.cache
+C:\Users\Oguzhan\Desktop\InveonBootcamp\MicroserviceInveonExample\Inveon.MailSender\obj\Debug\net7.0\Inveon.MailSender.dll
+C:\Users\Oguzhan\Desktop\InveonBootcamp\MicroserviceInveonExample\Inveon.MailSender\obj\Debug\net7.0\refint\Inveon.MailSender.dll
+C:\Users\Oguzhan\Desktop\InveonBootcamp\MicroserviceInveonExample\Inveon.MailSender\obj\Debug\net7.0\Inveon.MailSender.pdb
+C:\Users\Oguzhan\Desktop\InveonBootcamp\MicroserviceInveonExample\Inveon.MailSender\obj\Debug\net7.0\ref\Inveon.MailSender.dll

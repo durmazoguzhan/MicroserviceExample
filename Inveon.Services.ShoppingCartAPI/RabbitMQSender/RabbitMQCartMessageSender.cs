@@ -2,6 +2,9 @@
 using Newtonsoft.Json;
 using RabbitMQ.Client;
 using System.Text;
+using System.IO;
+using System.Net;
+using System.Net.Mail;
 
 namespace Inveon.Services.ShoppingCartAPI.RabbitMQSender
 {

@@ -4,6 +4,6 @@ namespace Inveon.Services.ShoppingCartAPI.RabbitMQSender
 {
     public interface IRabbitMQCartMessageSender
     {
-        void SendMessage(BaseMessage baseMessage, String queueName);
+        void SendMessage(BaseMessage baseMessage, string queueName);
     }
 }

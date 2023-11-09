@@ -68,7 +68,6 @@ namespace Inveon.Web.Areas.Customer.Controllers
             return View();
         }
 
-
         public async Task<IActionResult> Checkout()
         {
             return View(await LoadCartDtoBasedOnLoggedInUser());
@@ -81,12 +80,13 @@ namespace Inveon.Web.Areas.Customer.Controllers
             {
                 var accessToken = await HttpContext.GetTokenAsync("access_token");
                 var response = await _cartService.Checkout<ResponseDto>(cartDto.CartHeader, accessToken);
-                // var response = await _cartService.Checkout2<ResponseDto>(cartDto, accessToken);
+
                 if (!response.IsSuccess)
                 {
                     TempData["Error"] = response.DisplayMessage;
                     return RedirectToAction(nameof(Checkout));
                 }
+
                 return RedirectToAction(nameof(Confirmation));
             }
             catch (Exception e)
@@ -99,6 +99,7 @@ namespace Inveon.Web.Areas.Customer.Controllers
         {
             return View();
         }
+
         private async Task<CartDto> LoadCartDtoBasedOnLoggedInUser()
         {
             var userId = User.Claims.Where(u => u.Type == "sub")?.FirstOrDefault()?.Value;

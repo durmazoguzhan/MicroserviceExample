@@ -17,18 +17,15 @@ namespace Inveon.Services.ShoppingCartAPI.Controllers
 
         private readonly ICartRepository _cartRepository;
         private readonly ICouponRepository _couponRepository;
-        // private readonly IMessageBus _messageBus;
-        protected ResponseDto _response;
+        private readonly ResponseDto _response;
         private readonly IRabbitMQCartMessageSender _rabbitMQCartMessageSender;
-        // IMessageBus messageBus,
         public CartAPICheckOutController(ICartRepository cartRepository,
             ICouponRepository couponRepository, IRabbitMQCartMessageSender rabbitMQCartMessageSender)
         {
             _cartRepository = cartRepository;
             _couponRepository = couponRepository;
             _rabbitMQCartMessageSender = rabbitMQCartMessageSender;
-            //_messageBus = messageBus;
-            this._response = new ResponseDto();
+            _response = new ResponseDto();
         }
 
         [HttpPost]
@@ -56,14 +53,15 @@ namespace Inveon.Services.ShoppingCartAPI.Controllers
                 }
 
                 checkoutHeader.CartDetails = cartDto.CartDetails;
-                //logic to add message to process order.
-                // await _messageBus.PublishMessage(checkoutHeader, "checkoutqueue");
 
-                ////rabbitMQ
+                Payment payment = PaymentProcess(checkoutHeader);
 
-                Payment payment = OdemeIslemi(checkoutHeader);
                 _rabbitMQCartMessageSender.SendMessage(checkoutHeader, "checkoutqueue");
                 await _cartRepository.ClearCart(checkoutHeader.UserId);
+
+                string mailBody = $@"<div><div style=""padding:5%;align-items:center;justify-content:center;background-color:#2f4f4f""><h2 style=""color:#fff;font-family:'Gill Sans','Gill Sans MT',Calibri,'Trebuchet MS',sans-serif"">Siparişiniz için teşekkürler</p></div><br><div><p>Ödemeniz alındı, aşağıdaki tablodan sipariş detayınızı görüntüleyebilirsiniz.</p></div><br><div style=""font-family:sans-serif""><h4>Sipariş Numaranız: {checkoutHeader.CartHeaderId}</h4><table style=""border:.5vh;border-style:solid;border-radius:3%;padding:1%""><thead><tr><th>Ürün Adı</th><th>Adet</th><th>Fiyat</th></tr></thead><tbody><tr><td>{checkoutHeader.CartDetails.First().Product.Name}</td><td>{checkoutHeader.CartDetails.First().Count}</td><td>{checkoutHeader.CartDetails.First().Product.Price}</td></tr></tbody></table></div></div>";
+
+                MailSender.MailSender.Send(checkoutHeader.Email, "Siparişiniz Alındı", mailBody);
             }
             catch (Exception ex)
             {
@@ -73,114 +71,124 @@ namespace Inveon.Services.ShoppingCartAPI.Controllers
             return _response;
         }
 
-        public Payment OdemeIslemi(CheckoutHeaderDto checkoutHeaderDto)
+        public Payment PaymentProcess(CheckoutHeaderDto checkoutHeaderDto)
         {
+            var request = new CreatePaymentRequest();
+            ConfigurePaymentRequest(ref request);
 
-            CartDto cartDto = _cartRepository.GetCartByUserIdNonAsync(checkoutHeaderDto.UserId);
+            request.Price = Math.Round(checkoutHeaderDto.OrderTotal, 2).ToString();
+            request.PaidPrice = Math.Round(checkoutHeaderDto.OrderTotal, 2).ToString();
+            request.PaymentCard = CreatePaymentCard(checkoutHeaderDto);
 
-            Options options = new Options();
+            request.BasketId = checkoutHeaderDto.CartHeaderId.ToString();
+            request.BasketItems = GetBasketItems(checkoutHeaderDto.CartDetails);
 
-            options.ApiKey = "sandbox-8zkTEIzQ8rikWsvPkL76V8kAvo4DpYuz";
-            options.SecretKey = "sandbox-56FjiYYrjkAuSqENtt0k8b7Ei03s8X61";
-            options.BaseUrl = "https://sandbox-api.iyzipay.com";
+            request.Buyer = CreateBuyer(checkoutHeaderDto);
+            request.ShippingAddress = CreateAddress();
+            request.BillingAddress = CreateAddress();
 
-            CreatePaymentRequest request = new CreatePaymentRequest();
+            var options = new Options();
+            ConfigureOptions(ref options);
+
+            return Payment.Create(request, options);
+        }
+
+        public void ConfigurePaymentRequest(ref CreatePaymentRequest request)
+        {
             request.Locale = Locale.TR.ToString();
             request.ConversationId = new Random().Next(1111, 9999).ToString();
-            request.Price = "1";
-            request.PaidPrice = "1.2";
-            //request.Price = "15";//checkoutHeaderDto.OrderTotal.ToString();
-            //request.PaidPrice = "15";//checkoutHeaderDto.OrderTotal.ToString();
             request.Currency = Currency.TRY.ToString();
-            request.Installment = 1;
-            request.BasketId = "B67832";
-            request.BasketId = checkoutHeaderDto.CartHeaderId.ToString();
             request.PaymentChannel = PaymentChannel.WEB.ToString();
             request.PaymentGroup = PaymentGroup.PRODUCT.ToString();
+            request.Installment = 1;
+        }
 
-            PaymentCard paymentCard = new PaymentCard();
-            paymentCard.CardHolderName = checkoutHeaderDto.CartHeaderId.ToString();
-            paymentCard.CardNumber = checkoutHeaderDto.CardNumber;
-            paymentCard.ExpireMonth = checkoutHeaderDto.ExpiryMonth;
-            paymentCard.ExpireYear = checkoutHeaderDto.ExpiryYear;
-            paymentCard.Cvc = checkoutHeaderDto.CVV;
-            paymentCard.RegisterCard = 0;
-            paymentCard.CardAlias = "Infotech";
-            request.PaymentCard = paymentCard;
+        public PaymentCard CreatePaymentCard(CheckoutHeaderDto checkoutHeaderDto)
+        {
+            var paymentCard = new PaymentCard
+            {
+                CardHolderName = checkoutHeaderDto.CartHeaderId.ToString(),
+                CardNumber = checkoutHeaderDto.CardNumber,
+                ExpireMonth = checkoutHeaderDto.ExpiryMonth,
+                ExpireYear = checkoutHeaderDto.ExpiryYear,
+                Cvc = checkoutHeaderDto.CVV,
+                RegisterCard = 0,
+                CardAlias = "Inveon"
+            };
 
-            Buyer buyer = new Buyer();
-            //buyer.Id = cartDto.CartHeader.UserId;
-            buyer.Id = "BY789";
-            buyer.Name = checkoutHeaderDto.FirstName;
-            buyer.Surname = checkoutHeaderDto.FirstName;
-            buyer.GsmNumber = checkoutHeaderDto.Phone;
-            buyer.Email = checkoutHeaderDto.Email;
-            buyer.IdentityNumber = "74300864791";
-            buyer.LastLoginDate = "2015-10-05 12:43:35";
-            buyer.RegistrationDate = "2013-04-21 15:12:09";
-            buyer.RegistrationAddress = "Nidakule Göztepe, Merdivenköy Mah. Bora Sok. No:1";
-            buyer.Ip = "85.34.78.112";
-            buyer.City = "Istanbul";
-            buyer.Country = "Turkey";
-            buyer.ZipCode = "34732";
-            request.Buyer = buyer;
+            //paymentCard.CardNumber = "5528790000000008";
+            //paymentCard.ExpireMonth = "12";
+            //paymentCard.ExpireYear = "2030";
+            //paymentCard.Cvc = "123";
 
-            Address shippingAddress = new Address();
+            return paymentCard;
+        }
+
+        public Buyer CreateBuyer(CheckoutHeaderDto checkoutHeaderDto)
+        {
+            var buyer = new Buyer
+            {
+                Id = checkoutHeaderDto.UserId,
+                Name = checkoutHeaderDto.FirstName,
+                Surname = checkoutHeaderDto.LastName,
+                GsmNumber = checkoutHeaderDto.Phone,
+                Email = checkoutHeaderDto.Email,
+                IdentityNumber = "74300864791",
+                LastLoginDate = "2015-10-05 12:43:35",
+                RegistrationDate = "2013-04-21 15:12:09",
+                RegistrationAddress = "Nidakule Göztepe, Merdivenköy Mah. Bora Sok. No:1",
+                Ip = "85.34.78.112",
+                City = "Istanbul",
+                Country = "Turkey",
+                ZipCode = "34732"
+            };
+            return buyer;
+        }
+
+        public Address CreateAddress()
+        {
+            var shippingAddress = new Address();
             shippingAddress.ContactName = "Jane Doe";
             shippingAddress.City = "Istanbul";
             shippingAddress.Country = "Turkey";
             shippingAddress.Description = "Nidakule Göztepe, Merdivenköy Mah. Bora Sok. No:1";
             shippingAddress.ZipCode = "34742";
-            request.ShippingAddress = shippingAddress;
-
-            Address billingAddress = new Address();
-            billingAddress.ContactName = "Jane Doe";
-            billingAddress.City = "Istanbul";
-            billingAddress.Country = "Turkey";
-            billingAddress.Description = "Nidakule Göztepe, Merdivenköy Mah. Bora Sok. No:1";
-            billingAddress.ZipCode = "34742";
-            request.BillingAddress = billingAddress;
-
-            List<BasketItem> basketItems = new List<BasketItem>();
-            BasketItem firstBasketItem = new BasketItem();
-            firstBasketItem.Id = "BI101";
-            firstBasketItem.Name = "Binocular";
-            firstBasketItem.Category1 = "Collectibles";
-            firstBasketItem.Category2 = "Accessories";
-            firstBasketItem.ItemType = BasketItemType.PHYSICAL.ToString();
-            firstBasketItem.Price = "0.3";
-            basketItems.Add(firstBasketItem);
-
-            BasketItem secondBasketItem = new BasketItem();
-            secondBasketItem.Id = "BI102";
-            secondBasketItem.Name = "Game code";
-            secondBasketItem.Category1 = "Game";
-            secondBasketItem.Category2 = "Online Game Items";
-            secondBasketItem.ItemType = BasketItemType.VIRTUAL.ToString();
-            secondBasketItem.Price = "0.5";
-            basketItems.Add(secondBasketItem);
-
-            BasketItem thirdBasketItem = new BasketItem();
-            thirdBasketItem.Id = "BI103";
-            thirdBasketItem.Name = "Usb";
-            thirdBasketItem.Category1 = "Electronics";
-            thirdBasketItem.Category2 = "Usb / Cable";
-            thirdBasketItem.ItemType = BasketItemType.PHYSICAL.ToString();
-            thirdBasketItem.Price = "0.2";
-            basketItems.Add(thirdBasketItem);
-            request.BasketItems = basketItems;
-
-            // TODO: Veriler sepetten gelecek
-            // TODO: Kullanıcıya siparişiniz oluşturuldu maili gidecek (rbtmq)
-
-            //Payment payment = Payment.Create(request, options);
-
-            //kart no 5528790000000008
-            //paymentCard.ExpireMonth = "12";
-            //paymentCard.ExpireYear = "2030";
-            //paymentCard.Cvc = "123";
-
-            return Payment.Create(request, options);
+            return shippingAddress;
         }
+
+        public List<BasketItem> GetBasketItems(IEnumerable<CartDetailsDto> cartItems)
+        {
+            var basketItems = new List<BasketItem>();
+
+            foreach (var item in cartItems)
+            {
+                for (int i = 0; i < item.Count; i++)
+                {
+                    basketItems.Add(new BasketItem
+                    {
+                        Id = item.ProductId.ToString(),
+                        Name = item.Product.Name,
+                        Category1 = item.Product.CategoryName,
+                        Price = item.Product.Price.ToString(),
+                        ItemType = BasketItemType.PHYSICAL.ToString()
+                    });
+                }
+            }
+
+            return basketItems;
+        }
+
+        public void ConfigureOptions(ref Options options)
+        {
+            // Ibrahim Gokyar
+            //options.ApiKey = "sandbox-8zkTEIzQ8rikWsvPkL76V8kAvo4DpYuz";
+            //options.SecretKey = "sandbox-56FjiYYrjkAuSqENtt0k8b7Ei03s8X61";
+
+            // Oguzhan Durmaz
+            options.ApiKey = "sandbox-HymYosJJ7m1WjDs0JNqEbZSKpOP3U3dn";
+            options.SecretKey = "sandbox-twsQWSfR41ctcuvelwrk7eswvYv6kPx6";
+            options.BaseUrl = "https://sandbox-api.iyzipay.com";
+        }
+
     }
 }

@@ -83,3 +83,5 @@ C:\Users\Oguzhan\Desktop\InveonBootcamp\MicroserviceInveonExample\Inveon.Service
 C:\Users\Oguzhan\Desktop\InveonBootcamp\MicroserviceInveonExample\Inveon.Services.ShoppingCartAPI\obj\Debug\net7.0\Inveon.Services.ShoppingCartAPI.pdb
 C:\Users\Oguzhan\Desktop\InveonBootcamp\MicroserviceInveonExample\Inveon.Services.ShoppingCartAPI\obj\Debug\net7.0\Inveon.Services.ShoppingCartAPI.genruntimeconfig.cache
 C:\Users\Oguzhan\Desktop\InveonBootcamp\MicroserviceInveonExample\Inveon.Services.ShoppingCartAPI\obj\Debug\net7.0\ref\Inveon.Services.ShoppingCartAPI.dll
+C:\Users\Oguzhan\Desktop\InveonBootcamp\MicroserviceInveonExample\Inveon.Services.ShoppingCartAPI\bin\Debug\net7.0\Inveon.MailSender.dll
+C:\Users\Oguzhan\Desktop\InveonBootcamp\MicroserviceInveonExample\Inveon.Services.ShoppingCartAPI\bin\Debug\net7.0\Inveon.MailSender.pdb

@@ -1357,6 +1357,16 @@
           }
         }
       },
+      "Inveon.MailSender/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/Inveon.MailSender.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Inveon.MailSender.dll": {}
+        }
+      },
       "Inveon.MessageBus/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
@@ -4208,6 +4218,11 @@
         "version.txt"
       ]
     },
+    "Inveon.MailSender/1.0.0": {
+      "type": "project",
+      "path": "../Inveon.MailSender/Inveon.MailSender.csproj",
+      "msbuildProject": "../Inveon.MailSender/Inveon.MailSender.csproj"
+    },
     "Inveon.MessageBus/1.0.0": {
       "type": "project",
       "path": "../Inveon.MessageBus/Inveon.MessageBus.csproj",
@@ -4218,6 +4233,7 @@
     "net7.0": [
       "AutoMapper >= 10.1.1",
       "AutoMapper.Extensions.Microsoft.DependencyInjection >= 8.1.1",
+      "Inveon.MailSender >= 1.0.0",
       "Inveon.MessageBus >= 1.0.0",
       "Iyzipay >= 2.1.54",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 7.0.13",
@@ -4257,6 +4273,9 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
+            "C:\\Users\\Oguzhan\\Desktop\\InveonBootcamp\\MicroserviceInveonExample\\Inveon.MailSender\\Inveon.MailSender.csproj": {
+              "projectPath": "C:\\Users\\Oguzhan\\Desktop\\InveonBootcamp\\MicroserviceInveonExample\\Inveon.MailSender\\Inveon.MailSender.csproj"
+            },
             "C:\\Users\\Oguzhan\\Desktop\\InveonBootcamp\\MicroserviceInveonExample\\Inveon.MessageBus\\Inveon.MessageBus.csproj": {
               "projectPath": "C:\\Users\\Oguzhan\\Desktop\\InveonBootcamp\\MicroserviceInveonExample\\Inveon.MessageBus\\Inveon.MessageBus.csproj"
             }
