@@ -7,6 +7,9 @@
 - Ocelot
 - Identity Server
 - SignalR
+- RabbitMQ
+- iyzico / iyzipay
+- SMTP Mail
 
 #### Live Chat
 ![image](https://github.com/durmazoguzhan/MicroserviceExample/assets/81313884/afc450f7-a7ed-4cb6-bdcb-3c8995796de1)
